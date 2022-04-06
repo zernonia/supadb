@@ -21,7 +21,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       // Extract the item from the data
       return item.map((el) => {
         let link = "https://www.imdb.com" + el.querySelector(".lister-item-image a")?.getAttribute("href")
-        let id = link.substring(link.indexOf("title/") + 6, link.lastIndexOf("/"))
+        let id = link.match(/title\/(.*?)\//i)[1]
         let image =
           el.querySelector(".lister-item-image img")?.getAttribute("loadlate") ??
           el.querySelector(".lister-item-image img")?.getAttribute("src")
