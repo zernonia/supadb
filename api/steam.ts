@@ -32,8 +32,9 @@ export default async (req: VercelRequest, res: VercelResponse) => {
           el.querySelector(".platform_img.mac") ? "Mac" : null,
           el.querySelector(".platform_img.linux") ? "Linux" : null,
         ].filter((i) => i)
+        let genre = query.genre
 
-        return { id, link, name, image, price, tags, platform }
+        return { id, link, name, image, price, tags, platform, genre }
       })
     })
 
