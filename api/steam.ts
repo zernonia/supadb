@@ -45,3 +45,17 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     res.end(err)
   }
 }
+
+// ** Genre **
+// Free to Play
+// Early Access
+// Action
+// Adventure
+// Casual
+// Indie
+// Massively Multiplayer
+// Racing
+// RPG
+// Simulation
+// Sports
+// Strategy

@@ -54,3 +54,20 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     res.end(err)
   }
 }
+
+// ** Genre **
+// Comedy
+// Sci-Fi
+// Horror
+// Romance
+// Action
+// Thriller
+// Drama
+// Mystery
+// Crime
+// Animation
+// Adventure
+// Fantasy
+// Comedy-Romance
+// Action-Comedy
+// Superhero
