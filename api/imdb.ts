@@ -1,9 +1,8 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node"
 import { initPage } from "./_lib/chromium"
 
-var hrstart = process.hrtime()
-
 export default async (req: VercelRequest, res: VercelResponse) => {
+  var hrstart = process.hrtime()
   const { query } = req
 
   if (!query.genre || !query.start) {
@@ -17,7 +16,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     await page.waitForSelector(".lister-list")
 
     await page.waitForSelector(".loadlate")
-    let urls = await page.$$eval(".lister-item", (item) => {
+    let data = await page.$$eval(".lister-item", (item) => {
       // Extract the item from the data
       return item.map((el) => {
         let link = "https://www.imdb.com" + el.querySelector(".lister-item-image a")?.getAttribute("href")
@@ -48,7 +47,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
     var hrend = process.hrtime(hrstart)
     console.info("Execution time (hr): %ds %dms", hrend[0], hrend[1] / 1000000)
-    res.json(urls)
+    res.json(data)
   } catch (err) {
     res.statusCode = 500
     res.end(err)
