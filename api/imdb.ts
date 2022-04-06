@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node"
 import { initPage } from "./_lib/chromium"
 
 var hrstart = process.hrtime()
-const s = performance.now()
+
 export default async (req: VercelRequest, res: VercelResponse) => {
   const { query } = req
 
