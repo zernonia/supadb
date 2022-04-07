@@ -2,3 +2,9 @@ html {
   font-family: "Inter", sans-serif;
   @apply text-light-900;
 }
+pre {
+  @apply p-6 rounded-2xl text-lg !bg-dark-300 overflow-y-auto;
+}
+pre span {
+  font-family: "Roboto Mono", monospace;
+}

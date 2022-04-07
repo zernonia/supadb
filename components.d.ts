@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CodeInit: typeof import('./src/components/CodeInit.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     'IHeroiconsOutline:home': typeof import('~icons/heroicons-outline/home')['default']
     'IHeroiconsOutline:userCircle': typeof import('~icons/heroicons-outline/user-circle')['default']
