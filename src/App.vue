@@ -15,10 +15,12 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <div class="bg-dark-500 min-h-screen flex justify-center">
+  <div class="bg-dark-500 min-h-screen flex justify-center p-6">
     <div class="max-w-screen-xl w-full">
       <router-link to="/">
-        <h1 class="p-6 text-5xl font-bold">SupaDB</h1>
+        <h1 class="px-6 py-3 text-5xl font-bold bg-transparent hover:bg-dark-300 transition w-max rounded-2xl">
+          SupaDB
+        </h1>
       </router-link>
       <div class="flex">
         <aside class="p-3 text-2xl flex flex-col space-y-4">
@@ -29,7 +31,9 @@ onBeforeMount(() => {
             <i-heroicons-outline:user-circle></i-heroicons-outline:user-circle>
           </router-link>
 
-          <div class="h-1 rounded-full bg-gray-100 w-full"></div>
+          <div class="px-4">
+            <div class="h-1 rounded-full bg-gray-100 w-full"></div>
+          </div>
 
           <router-link to="/imdb" class="p-3 h-13 bg-transparent hover:bg-dark-200 rounded-lg transition">
             <i-simple-icons:imdb></i-simple-icons:imdb>
