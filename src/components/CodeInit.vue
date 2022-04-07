@@ -6,7 +6,7 @@ const props = defineProps({
   title: String,
 })
 
-let code = ref(`const supabase = createClient(...)  // Go to 'Login' to learn more...
+let code = ref(`const supabase = createClient(...)  // Login to get receive credential
 
 const { data, error } = await supabase.from("${props.title}").select("*")
 `)

@@ -17,11 +17,14 @@ onBeforeMount(() => {
 <template>
   <div class="bg-dark-500 min-h-screen flex justify-center p-6">
     <div class="max-w-screen-xl w-full">
-      <router-link to="/">
-        <h1 class="px-6 py-3 text-5xl font-bold bg-transparent hover:bg-dark-300 transition w-max rounded-2xl">
-          SupaDB
-        </h1>
-      </router-link>
+      <div>
+        <router-link
+          class="flex w-max px-6 py-3 text-5xl font-bold bg-transparent hover:bg-dark-300 transition rounded-2xl"
+          to="/"
+        >
+          <h1>SupaDB</h1>
+        </router-link>
+      </div>
       <div class="flex">
         <aside class="p-3 text-2xl flex flex-col space-y-4 w-20">
           <router-link to="/" class="p-3 h-13 bg-transparent hover:bg-dark-200 rounded-xl transition">
