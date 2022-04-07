@@ -11,12 +11,14 @@
     "@supabase/supabase-js": "^1.33.3",
     "@vueuse/core": "^8.0.0",
     "chrome-aws-lambda": "^10.1.0",
+    "jsonwebtoken": "^8.5.1",
     "puppeteer-core": "^13.5.2",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@iconify/json": "^2.1.14",
+    "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^17.0.23",
     "@vercel/node": "^1.14.0",
     "@vitejs/plugin-vue": "^2.2.0",
