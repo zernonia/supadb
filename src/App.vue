@@ -15,5 +15,17 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <router-view></router-view>
+  <div class="">
+    <router-link to="/">
+      <h1 class="p-6 text-4xl font-bold">SupaDB</h1>
+    </router-link>
+    <div class="flex">
+      <aside class="p-6 text-2xl">
+        <i-mdi:cog></i-mdi:cog>
+      </aside>
+      <div class="w-full">
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
 </template>
