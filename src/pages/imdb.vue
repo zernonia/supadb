@@ -27,9 +27,9 @@ const dictionary = [
 </script>
 
 <template>
-  <div class="pr-6">
-    <img class="rounded-4xl" :src="bannerImdb" alt="Imdb banner" />
-    <p class="mt-4 text-2xl font-medium">
+  <div class="md:pr-6">
+    <img class="rounded-2xl md:rounded-3xl lg:rounded-4xl" :src="bannerImdb" alt="Imdb banner" />
+    <p class="mt-4 text-xl md:text-2xl font-medium">
       IMDb is so popular for begineer tutorial, how can I not turn it into <strong>Supabase Database</strong>?
     </p>
 
@@ -37,11 +37,11 @@ const dictionary = [
       <CodeInit title="imdb"></CodeInit>
 
       <div class="mt-6">
-        <h4 class="text-yellow-300 text-3xl font-semibold">Dictionary</h4>
+        <h4 class="text-yellow-300 text-2xl md:text-3xl font-semibold">Dictionary</h4>
         <div class="mt-3">
           <div class="px-6 py-3 flex w-full opacity-50">
-            <div class="w-1/3">name</div>
-            <div class="w-1/5">type</div>
+            <div class="w-1/3 flex-shrink-0">name</div>
+            <div class="w-1/5 flex-shrink-0 mx-3">type</div>
             <div class="w-full">value</div>
           </div>
           <ul class="p-3 rounded-2xl bg-dark-300">
@@ -49,8 +49,8 @@ const dictionary = [
               class="px-3 py-2 flex bg-transparent hover:bg-dark-100 transition rounded-xl"
               v-for="item in dictionary"
             >
-              <div class="w-1/3">{{ item.name }}</div>
-              <div class="w-1/5">{{ item.type }}</div>
+              <div class="w-1/3 flex-shrink-0">{{ item.name }}</div>
+              <div class="w-1/5 flex-shrink-0 mx-3">{{ item.type }}</div>
               <div class="w-full truncate">{{ item.value }}</div>
             </li>
           </ul>

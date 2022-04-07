@@ -3,7 +3,7 @@ html {
   @apply text-light-900;
 }
 pre {
-  @apply p-6 rounded-2xl text-lg !bg-dark-300 overflow-y-auto;
+  @apply p-6 rounded-2xl md:text-lg !bg-dark-300 overflow-y-auto;
 }
 pre span {
   font-family: "Roboto Mono", monospace;
@@ -18,6 +18,6 @@ input {
 strong {
   @apply text-yellow-300;
 }
-a {
+.link {
   @apply flex w-max px-6 py-3 font-semibold bg-transparent hover:bg-dark-300 transition rounded-2xl;
 }

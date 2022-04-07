@@ -15,18 +15,15 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <div class="bg-dark-500 flex h-full h-screen min-h-screen justify-center p-6 overflow-y-auto">
-    <div class="max-w-screen-xl w-full h-full flex flex-col">
+  <div class="bg-dark-500 flex h-full h-screen min-h-screen justify-center p-3 md:p-6 overflow-y-auto">
+    <div class="max-w-screen-xl w-full h-full flex flex-col relative">
       <div>
-        <router-link
-          class="flex w-max px-6 py-3 text-5xl font-bold bg-transparent hover:bg-dark-300 transition rounded-2xl"
-          to="/"
-        >
+        <router-link class="flex w-max !font-bold text-3xl md:text-5xl link" to="/">
           <h1>SupaDB</h1>
         </router-link>
       </div>
       <div class="flex">
-        <aside class="p-3 text-2xl flex flex-col space-y-4 w-20">
+        <aside class="p-3 text-2xl flex -top-2 right-36 md:flex-col md:space-y-4 w-20 absolute md:static">
           <router-link to="/" class="p-3 h-13 bg-transparent hover:bg-dark-200 rounded-xl transition">
             <i-heroicons-outline:home></i-heroicons-outline:home>
           </router-link>
@@ -37,7 +34,7 @@ onBeforeMount(() => {
             <i-heroicons-outline:user-circle></i-heroicons-outline:user-circle>
           </router-link>
 
-          <div class="px-4">
+          <div class="px-4 hidden md:block">
             <div class="h-1 rounded-full bg-gray-100 w-full"></div>
           </div>
 
@@ -48,15 +45,16 @@ onBeforeMount(() => {
             <i-simple-icons:steam></i-simple-icons:steam>
           </router-link>
         </aside>
-        <div class="p-3 w-[calc(100%-5rem)]">
+        <div class="p-3 w-full md:w-[calc(100%-5rem)]">
           <router-view></router-view>
         </div>
       </div>
-      <div class="flex items-center mt-auto pt-12">
-        <router-link to="/"> Terms & Condition </router-link>
-        |
-        <p class="flex items-center w-max px-6 py-3 font-semibold">
-          Coded with 💚 by <a href="https://twitter.com/zernonia">Zernonia</a>
+      <div class="flex flex-col md:flex-row md:items-center mt-auto pt-12">
+        <router-link class="link" to="/"> Terms & Condition </router-link>
+        <span class="hidden md:block">|</span>
+
+        <p class="flex items-center w-max px-6 font-semibold">
+          Coded with 💚 by <a class="link" href="https://twitter.com/zernonia">Zernonia</a>
         </p>
       </div>
     </div>
