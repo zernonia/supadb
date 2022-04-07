@@ -15,8 +15,8 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <div class="bg-dark-500 min-h-screen flex justify-center p-6">
-    <div class="max-w-screen-xl w-full">
+  <div class="bg-dark-500 flex h-full h-screen min-h-screen justify-center p-6 overflow-y-auto">
+    <div class="max-w-screen-xl w-full h-full flex flex-col">
       <div>
         <router-link
           class="flex w-max px-6 py-3 text-5xl font-bold bg-transparent hover:bg-dark-300 transition rounded-2xl"
@@ -51,6 +51,13 @@ onBeforeMount(() => {
         <div class="p-3 w-[calc(100%-5rem)]">
           <router-view></router-view>
         </div>
+      </div>
+      <div class="flex items-center mt-auto pt-12">
+        <router-link to="/"> Terms & Condition </router-link>
+        |
+        <p class="flex items-center w-max px-6 py-3 font-semibold">
+          Coded with 💚 by <a href="https://twitter.com/zernonia">Zernonia</a>
+        </p>
       </div>
     </div>
   </div>
