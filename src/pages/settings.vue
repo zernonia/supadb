@@ -55,7 +55,7 @@ const { copy, copied } = useClipboard({ source: printedCode.value })
 
 <template>
   <div>
-    <h2 class="text-yellow-400 text-4xl font-semibold">Settings</h2>
+    <h2 class="text-yellow-300 text-4xl font-semibold">Settings</h2>
 
     <div class="mt-6 flex flex-col">
       <label for="url">Supabase URL</label>
@@ -66,7 +66,7 @@ const { copy, copied } = useClipboard({ source: printedCode.value })
       <input type="text" disabled :value="config.auth" />
     </div>
 
-    <h2 class="text-yellow-400 mt-12 text-4xl font-semibold">Initiate Supabase Client</h2>
+    <h2 class="text-yellow-300 mt-12 text-4xl font-semibold">Initiate Supabase Client</h2>
     <div class="flex items-center justify-between">
       <p class="text-lg">Simply copy and paste the snippet below to initiate Supabase Client</p>
       <button @click="copy()" class="w-10 h-10 p-2 rounded-xl bg-transparent hover:bg-dark-300 transition">

@@ -35,7 +35,7 @@ const dictionary = [
       <CodeInit title="imdb"></CodeInit>
 
       <div class="mt-6">
-        <h4 class="text-yellow-400 text-3xl font-semibold">Dictionary</h4>
+        <h4 class="text-yellow-300 text-3xl font-semibold">Dictionary</h4>
         <div class="mt-3">
           <div class="px-6 py-3 flex w-full opacity-50">
             <div class="w-1/3">name</div>
