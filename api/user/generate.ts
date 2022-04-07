@@ -19,12 +19,12 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
     if (result.error) throw new Error(result.error.message)
 
-    const token = jwt.decode(process.env.VITE_SUPABASE_ANON as string) as any
-    if (token) {
-      token.secret = result.data.secret
-    }
+    // const token = jwt.decode(process.env.VITE_SUPABASE_ANON as string) as any
+    // if (token) {
+    //   token.secret = result.data.secret
+    // }
 
-    const newToken = jwt.sign(token, process.env.VITE_SUPABASE_JWT_SECRET as string)
+    const newToken = jwt.sign({ secret: result.data.secret }, process.env.VITE_SUPABASE_JWT_SECRET as string)
 
     res.json({
       key: newToken,
