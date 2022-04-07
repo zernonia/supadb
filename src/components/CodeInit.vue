@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { getHighlighter, setCDN } from "shiki"
 import { ref } from "vue"
+import { highlighter } from "@/plugins/shiki"
 
 const props = defineProps({
   title: String,
@@ -11,12 +11,7 @@ let code = ref(`const supabase = createClient(...)  // Login to get receive cred
 const { data, error } = await supabase.from("${props.title}").select("*")
 `)
 
-setCDN(import.meta.env.DEV ? "node_modules/shiki/" : "/shiki/")
-getHighlighter({
-  theme: "dark-plus",
-}).then((highlighter) => {
-  code.value = highlighter.codeToHtml(code.value, { lang: "ts" })
-})
+code.value = highlighter.codeToHtml(code.value, { lang: "ts" })
 </script>
 
 <template>

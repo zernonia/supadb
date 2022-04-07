@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { store } from "@/store"
 import { computed, ref, watch } from "vue"
-import * as shiki from "shiki"
 import { useClipboard } from "@vueuse/core"
+import { highlighter } from "@/plugins/shiki"
 
 const config = ref({
   url: import.meta.env.VITE_SUPABASE_URL,
@@ -36,16 +36,8 @@ let code = computed(
 )
 let printedCode = ref("")
 
-shiki.setCDN("/node_modules/shiki/")
-
 const applyShiki = () => {
-  shiki
-    .getHighlighter({
-      theme: "dark-plus",
-    })
-    .then((highlighter) => {
-      printedCode.value = highlighter.codeToHtml(code.value, { lang: "ts" })
-    })
+  printedCode.value = highlighter.codeToHtml(code.value, { lang: "ts" })
 }
 applyShiki()
 watch(code, () => applyShiki())
