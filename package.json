@@ -1,7 +1,9 @@
 {
-  "name": "supabase-form",
+  "name": "supadb",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "zernonia",
   "scripts": {
     "dev": "vite",
     "copy": "shx mkdir -p public/shiki && shx cp -r node_modules/shiki/{dist,samples,languages,themes} public/shiki/",

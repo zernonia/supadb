@@ -23,7 +23,7 @@ const dictionary = [
 
 <template>
   <div class="md:pr-6">
-    <img class="rounded-2xl md:rounded-3xl lg:rounded-4xl" :src="bannerSteam" alt="Imdb banner" />
+    <img class="w-full rounded-2xl md:rounded-3xl lg:rounded-4xl" :src="bannerSteam" alt="Steam banner" />
     <p class="mt-4 text-xl md:text-2xl font-medium">
       STEAM is included into <strong>Supabase Database</strong> because I can't find any STEAM marketplace API.
     </p>
