@@ -15,7 +15,7 @@
     "chrome-aws-lambda": "^10.1.0",
     "jsonwebtoken": "^8.5.1",
     "puppeteer-core": "^13.5.2",
-    "shiki": "^0.10.1",
+    "shiki": "0.9.4",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"
   },

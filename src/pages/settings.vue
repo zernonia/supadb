@@ -37,7 +37,7 @@ let code = computed(
 let printedCode = ref("")
 
 const applyShiki = () => {
-  printedCode.value = highlighter.codeToHtml(code.value, { lang: "ts" })
+  printedCode.value = highlighter.codeToHtml(code.value, "ts")
 }
 applyShiki()
 watch(code, () => applyShiki())

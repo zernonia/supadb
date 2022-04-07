@@ -11,7 +11,7 @@ let code = ref(`const supabase = createClient(...)  // Login to get receive cred
 const { data, error } = await supabase.from("${props.title}").select("*")
 `)
 
-code.value = highlighter.codeToHtml(code.value, { lang: "ts" })
+code.value = highlighter.codeToHtml(code.value, "ts")
 </script>
 
 <template>
