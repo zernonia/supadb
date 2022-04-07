@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "copy": "shx mkdir -p public/shiki && shx cp -r node_modules/shiki/{languages,themes} public/shiki/",
+    "copy": "shx mkdir -p public/shiki && shx cp -r node_modules/shiki/{dist,samples,languages,themes} public/shiki/",
     "prebuild": "npm run copy",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
