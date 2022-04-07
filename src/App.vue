@@ -1,11 +1,19 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue"
+import { onBeforeMount, onMounted } from "vue"
+import { supabase } from "./plugins/supabase"
+import { store } from "@/store"
+onBeforeMount(() => {
+  supabase.auth.onAuthStateChange((event, session) => {
+    console.log({ event, session })
+    if (event == "SIGNED_IN") {
+      store.user = session?.user
+    } else if (event == "SIGNED_OUT") {
+      store.user = null
+    }
+  })
+})
 </script>
 
 <template>
-  <div class="min-w-screen min-h-screen flex flex-col justify-center items-center">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Vite Haste ➹" />
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
