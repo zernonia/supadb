@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as shiki from "shiki"
+import { getHighlighter, setCDN } from "shiki"
 import { ref } from "vue"
 
 const props = defineProps({
@@ -11,14 +11,12 @@ let code = ref(`const supabase = createClient(...)  // Login to get receive cred
 const { data, error } = await supabase.from("${props.title}").select("*")
 `)
 
-shiki.setCDN("/node_modules/shiki/")
-shiki
-  .getHighlighter({
-    theme: "dark-plus",
-  })
-  .then((highlighter) => {
-    code.value = highlighter.codeToHtml(code.value, { lang: "ts" })
-  })
+setCDN(import.meta.env.DEV ? "node_modules/shiki/" : "/shiki/")
+getHighlighter({
+  theme: "dark-plus",
+}).then((highlighter) => {
+  code.value = highlighter.codeToHtml(code.value, { lang: "ts" })
+})
 </script>
 
 <template>

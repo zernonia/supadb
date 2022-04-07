@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "copy": "shx mkdir -p public/shiki && shx cp -r node_modules/shiki/{languages,themes} public/shiki/",
+    "prebuild": "npm run copy",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
@@ -24,6 +26,7 @@
     "@vercel/node": "^1.14.0",
     "@vitejs/plugin-vue": "^2.2.0",
     "@windicss/plugin-animations": "^1.0.9",
+    "shx": "^0.3.4",
     "typescript": "^4.5.4",
     "unplugin-icons": "^0.13.3",
     "unplugin-vue-components": "^0.18.0",
