@@ -46,7 +46,11 @@ onBeforeMount(() => {
           </router-link>
         </aside>
         <div class="p-3 w-full md:w-[calc(100%-5rem)]">
-          <router-view></router-view>
+          <router-view v-slot="{ Component }">
+            <transition name="fade" mode="out-in">
+              <component :is="Component" />
+            </transition>
+          </router-view>
         </div>
       </div>
       <div class="flex flex-col md:flex-row md:items-center mt-auto pt-12">
