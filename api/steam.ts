@@ -1,13 +1,13 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node"
 import { initPage } from "./_lib/chromium"
+import { supabase } from "./_lib/supabase"
 
 export default async (req: VercelRequest, res: VercelResponse) => {
   var hrstart = process.hrtime()
   const { query } = req
 
   if (!query.genre || !query.page) {
-    res.statusCode = 400
-    res.end("No genre or page found")
+    res.status(400).end("No genre or page found")
   }
 
   try {
@@ -23,31 +23,34 @@ export default async (req: VercelRequest, res: VercelResponse) => {
         // Extract the item from the data
         return item.map((el) => {
           let link = el.getAttribute("href")
-          let id = +link.match(/app\/(.*?)\//i)[1]
-          let image = el.querySelector(".tab_item_cap_img")?.getAttribute("src")
-          let name = (el.querySelector(".tab_item_name") as HTMLElement)?.innerText
-          let price = (el.querySelector(".discount_final_price") as HTMLElement)?.innerText
-          let tags = (el.querySelector(".tab_item_top_tags") as HTMLElement)?.innerText.split(", ")
-          let platform = [
+          let id = Number(link?.match(/app\/(.*?)\//i)?.[1])
+          let image = el.querySelector(".tab_item_cap_img")?.getAttribute("src") ?? null
+          let title = (el.querySelector(".tab_item_name") as HTMLElement)?.innerText ?? null
+          let price =
+            +(el.querySelector(".discount_final_price") as HTMLElement)?.innerText?.replace(/[^\d.-]/g, "") ?? null
+          let tags = (el.querySelector(".tab_item_top_tags") as HTMLElement)?.innerText.split(", ") ?? null
+          let platforms = [
             el.querySelector(".platform_img.win") ? "Windows" : null,
             el.querySelector(".platform_img.mac") ? "Mac" : null,
             el.querySelector(".platform_img.linux") ? "Linux" : null,
           ].filter((i) => i)
 
           let genre = query.genre as string
-          return { id, link, image, name, price, tags, platform, genre }
+          return { id, link, image, title, price, tags, platforms, genre }
         })
       },
       query
     )
 
+    const result = await supabase.from("steam").upsert(data)
+    if (result.error) throw new Error(result.error.message)
+
     var hrend = process.hrtime(hrstart)
     console.info("Execution time (hr): %ds %dms", hrend[0], hrend[1] / 1000000)
-    res.json(data)
+    res.status(200).end("success")
   } catch (err) {
     console.log({ err })
-    res.statusCode = 500
-    res.end(err)
+    res.status(500).end(err)
   }
 }
 
