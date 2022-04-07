@@ -23,11 +23,14 @@ onBeforeMount(() => {
         </h1>
       </router-link>
       <div class="flex">
-        <aside class="p-3 text-2xl flex flex-col space-y-4">
+        <aside class="p-3 text-2xl flex flex-col space-y-4 w-20">
           <router-link to="/" class="p-3 h-13 bg-transparent hover:bg-dark-200 rounded-xl transition">
             <i-heroicons-outline:home></i-heroicons-outline:home>
           </router-link>
-          <router-link to="/login" class="p-3 h-13 bg-transparent hover:bg-dark-200 rounded-xl transition">
+          <router-link
+            :to="store.user ? '/settings' : '/login'"
+            class="p-3 h-13 bg-transparent hover:bg-dark-200 rounded-xl transition"
+          >
             <i-heroicons-outline:user-circle></i-heroicons-outline:user-circle>
           </router-link>
 
@@ -42,7 +45,7 @@ onBeforeMount(() => {
             <i-simple-icons:steam></i-simple-icons:steam>
           </router-link>
         </aside>
-        <div class="p-3 w-full">
+        <div class="p-3 w-[calc(100%-5rem)]">
           <router-view></router-view>
         </div>
       </div>
