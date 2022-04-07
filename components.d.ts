@@ -5,6 +5,11 @@
 declare module 'vue' {
   export interface GlobalComponents {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    'IHeroiconsOutline:home': typeof import('~icons/heroicons-outline/home')['default']
+    'IHeroiconsOutline:userCircle': typeof import('~icons/heroicons-outline/user-circle')['default']
+    'IMdi:cog': typeof import('~icons/mdi/cog')['default']
+    'ISimpleIcons:imdb': typeof import('~icons/simple-icons/imdb')['default']
+    'ISimpleIcons:steam': typeof import('~icons/simple-icons/steam')['default']
   }
 }
 
