@@ -10,6 +10,7 @@ declare module 'vue' {
     'IHeroiconsOutline:home': typeof import('~icons/heroicons-outline/home')['default']
     'IHeroiconsOutline:userCircle': typeof import('~icons/heroicons-outline/user-circle')['default']
     'IMdi:cog': typeof import('~icons/mdi/cog')['default']
+    'ISimpleIcons:github': typeof import('~icons/simple-icons/github')['default']
     'ISimpleIcons:imdb': typeof import('~icons/simple-icons/imdb')['default']
     'ISimpleIcons:steam': typeof import('~icons/simple-icons/steam')['default']
   }
