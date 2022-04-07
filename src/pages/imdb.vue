@@ -29,7 +29,9 @@ const dictionary = [
 <template>
   <div class="pr-6">
     <img class="rounded-4xl" :src="bannerImdb" alt="Imdb banner" />
-    <p class="mt-4 text-2xl font-medium">IMDb is the most popular web scraping ...</p>
+    <p class="mt-4 text-2xl font-medium">
+      IMDb is so popular for begineer tutorial, how can I not turn it into <strong>Supabase Database</strong>?
+    </p>
 
     <section class="mt-6">
       <CodeInit title="imdb"></CodeInit>

@@ -24,7 +24,9 @@ const dictionary = [
 <template>
   <div class="pr-6">
     <img class="rounded-4xl w-full" :src="bannerSteam" alt="Imdb banner" />
-    <p class="mt-4 text-2xl font-medium">IMDb is the most popular web scraping ...</p>
+    <p class="mt-4 text-2xl font-medium">
+      STEAM is included into <strong>Supabase Database</strong> because I can't find any STEAM marketplace API.
+    </p>
 
     <section class="mt-6">
       <CodeInit title="steam"></CodeInit>

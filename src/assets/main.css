@@ -15,3 +15,6 @@ label {
 input {
   @apply px-6 py-3 rounded-xl mt-1 mb-3 disabled:bg-dark-300 disabled:text-light-900 disabled:text-opacity-75;
 }
+strong {
+  @apply text-yellow-300;
+}
