@@ -2,15 +2,19 @@
 import { onBeforeMount, onMounted } from "vue"
 import { supabase } from "./plugins/supabase"
 import { store } from "@/store"
+
 onBeforeMount(() => {
-  supabase.auth.onAuthStateChange((event, session) => {
-    console.log({ event, session })
-    if (event == "SIGNED_IN") {
-      store.user = session?.user
-    } else if (event == "SIGNED_OUT") {
-      store.user = null
-    }
-  })
+  let session = supabase.auth.session()
+  if (session) store.user = session?.user
+})
+
+supabase.auth.onAuthStateChange((event, session) => {
+  console.log({ event, session })
+  if (event == "SIGNED_IN") {
+    store.user = session?.user
+  } else if (event == "SIGNED_OUT") {
+    store.user = null
+  }
 })
 </script>
 
