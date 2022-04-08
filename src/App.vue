@@ -27,7 +27,7 @@ supabase.auth.onAuthStateChange((event, session) => {
         </router-link>
       </div>
       <div class="flex">
-        <aside class="p-3 text-2xl flex -top-2 right-22 md:flex-col md:space-y-4 w-20 absolute md:static">
+        <aside class="p-3 h-min text-2xl flex -top-2 right-22 md:flex-col md:space-y-4 w-20 absolute md:sticky">
           <router-link
             to="/"
             class="hidden md:flex items-center justify-center p-3 bg-transparent hover:bg-dark-200 rounded-xl transition"
