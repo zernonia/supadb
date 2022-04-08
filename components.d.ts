@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    BasePage: typeof import('./src/components/BasePage.vue')['default']
     CodeInit: typeof import('./src/components/CodeInit.vue')['default']
     'IHeroiconsOutline:clipboardCopy': typeof import('~icons/heroicons-outline/clipboard-copy')['default']
     'IHeroiconsOutline:home': typeof import('~icons/heroicons-outline/home')['default']
@@ -11,6 +12,7 @@ declare module 'vue' {
     'ISimpleIcons:github': typeof import('~icons/simple-icons/github')['default']
     'ISimpleIcons:imdb': typeof import('~icons/simple-icons/imdb')['default']
     'ISimpleIcons:steam': typeof import('~icons/simple-icons/steam')['default']
+    ProductPage: typeof import('./src/components/ProductPage.vue')['default']
   }
 }
 
