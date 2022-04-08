@@ -28,7 +28,7 @@ const dictionary = [
 
 <template>
   <div class="md:pr-6">
-    <img class="rounded-2xl md:rounded-3xl lg:rounded-4xl" :src="bannerImdb" alt="Imdb banner" />
+    <img class="min-h-48 object-cover rounded-2xl md:rounded-3xl lg:rounded-4xl" :src="bannerImdb" alt="Imdb banner" />
     <p class="mt-4 text-xl md:text-2xl font-medium">
       IMDb is so popular for begineer tutorial, how can I not turn it into <strong>Supabase Database</strong>?
     </p>

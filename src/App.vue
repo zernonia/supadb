@@ -71,7 +71,7 @@ supabase.auth.onAuthStateChange((event, session) => {
         <span class="hidden md:block">|</span>
 
         <p class="flex items-center w-max px-6 font-semibold">
-          Coded with 💚 by <a class="link" href="https://twitter.com/zernonia">Zernonia</a>
+          Coded with 💛 by <a class="link" href="https://twitter.com/zernonia">Zernonia</a>
         </p>
       </div>
     </div>
