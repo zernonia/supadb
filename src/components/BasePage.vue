@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CodeInit from "@/components/CodeInit.vue"
+import CodeGraphql from "./CodeGraphql.vue"
 
 const props = defineProps({
   dictionary: Object,
@@ -22,6 +23,14 @@ const props = defineProps({
 
     <section class="mt-6">
       <CodeInit :title="title"></CodeInit>
+      <div class="flex items-center justify-center">
+        <div class="w-1/2 text-center leading-12 items-center justify-center h-full text-4xl font-semibold opacity-50">
+          Or...
+          <br />
+          with Graphql
+        </div>
+        <CodeGraphql class="min-w-96 w-1/2 ml-6" :title="title"></CodeGraphql>
+      </div>
 
       <div class="mt-6">
         <h4 class="text-yellow-300 text-2xl md:text-3xl font-semibold">Dictionary</h4>

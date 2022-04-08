@@ -26,7 +26,7 @@ const dictionary = [
 </script>
 
 <template>
-  <BasePage :dictionary="dictionary" title="steam" :banner="bannerImdb">
+  <BasePage :dictionary="dictionary" title="imdb" :banner="bannerImdb">
     <template #description>
       IMDb is so popular for begineer tutorial, how can I not turn it into <strong>Supabase Database</strong>?
     </template>

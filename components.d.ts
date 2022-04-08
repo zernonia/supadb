@@ -5,7 +5,9 @@
 declare module 'vue' {
   export interface GlobalComponents {
     BasePage: typeof import('./src/components/BasePage.vue')['default']
+    CodeGraphql: typeof import('./src/components/CodeGraphql.vue')['default']
     CodeInit: typeof import('./src/components/CodeInit.vue')['default']
+    'CodeInit copy': typeof import('./src/components/CodeInit copy.vue')['default']
     'IHeroiconsOutline:clipboardCopy': typeof import('~icons/heroicons-outline/clipboard-copy')['default']
     'IHeroiconsOutline:home': typeof import('~icons/heroicons-outline/home')['default']
     'IHeroiconsOutline:userCircle': typeof import('~icons/heroicons-outline/user-circle')['default']

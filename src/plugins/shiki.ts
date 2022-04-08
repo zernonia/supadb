@@ -8,6 +8,6 @@ export let highlighter: Highlighter
 export async function initHighlighter() {
   highlighter = await getHighlighter({
     themes: ["dark-plus"],
-    langs: ["ts"],
+    langs: ["ts", "graphql"],
   })
 }
