@@ -21,6 +21,9 @@ strong {
 .link {
   @apply flex w-max px-6 py-3 font-semibold bg-transparent hover:bg-dark-300 transition rounded-2xl;
 }
+.small-link {
+  @apply flex w-max mx-1 px-3 py-1 font-semibold bg-transparent hover:bg-dark-300 transition rounded-lg;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.2s ease-in-out;

@@ -67,12 +67,16 @@ supabase.auth.onAuthStateChange((event, session) => {
         </div>
       </div>
       <div class="flex flex-col md:flex-row md:items-center mt-auto pt-12 pb-3">
-        <router-link class="link" to="/terms-and-conditions"> Terms & Condition </router-link>
+        <router-link class="small-link" to="/terms-and-conditions"> Terms & Condition </router-link>
         <span class="hidden md:block">|</span>
 
-        <p class="flex items-center w-max px-6 font-semibold">
-          Coded with 💛 by <a class="link" target="_blank" href="https://twitter.com/zernonia">Zernonia</a>
+        <p class="flex items-center w-max px-4 font-semibold">
+          Coded with 💛 by <a class="small-link" target="_blank" href="https://twitter.com/zernonia">Zernonia</a>
         </p>
+
+        <span class="hidden md:block">|</span>
+
+        <a class="small-link" target="_blank" href="https://github.com/zernonia/supadb">⭐️ GitHub</a>
       </div>
     </div>
   </div>
