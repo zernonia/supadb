@@ -23,13 +23,16 @@ onBeforeMount(() => {
         </router-link>
       </div>
       <div class="flex">
-        <aside class="p-3 text-2xl flex -top-2 right-36 md:flex-col md:space-y-4 w-20 absolute md:static">
-          <router-link to="/" class="p-3 h-13 bg-transparent hover:bg-dark-200 rounded-xl transition">
+        <aside class="p-3 text-2xl flex -top-2 right-22 md:flex-col md:space-y-4 w-20 absolute md:static">
+          <router-link
+            to="/"
+            class="hidden md:flex items-center justify-center p-3 bg-transparent hover:bg-dark-200 rounded-xl transition"
+          >
             <i-heroicons-outline:home></i-heroicons-outline:home>
           </router-link>
           <router-link
             :to="store.user ? '/settings' : '/login'"
-            class="p-3 h-13 bg-transparent hover:bg-dark-200 rounded-xl transition"
+            class="flex items-center justify-center p-3 bg-transparent hover:bg-dark-200 rounded-xl transition"
           >
             <i-heroicons-outline:user-circle></i-heroicons-outline:user-circle>
           </router-link>
@@ -38,10 +41,16 @@ onBeforeMount(() => {
             <div class="h-1 rounded-full bg-gray-100 w-full"></div>
           </div>
 
-          <router-link to="/imdb" class="p-3 h-13 bg-transparent hover:bg-dark-200 rounded-xl transition">
+          <router-link
+            to="/imdb"
+            class="flex items-center justify-center p-3 bg-transparent hover:bg-dark-200 rounded-xl transition"
+          >
             <i-simple-icons:imdb></i-simple-icons:imdb>
           </router-link>
-          <router-link to="/steam" class="p-3 h-13 bg-transparent hover:bg-dark-200 rounded-xl transition">
+          <router-link
+            to="/steam"
+            class="flex items-center justify-center p-3 bg-transparent hover:bg-dark-200 rounded-xl transition"
+          >
             <i-simple-icons:steam></i-simple-icons:steam>
           </router-link>
         </aside>
