@@ -23,7 +23,7 @@ strong {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.25s ease;
+  transition: all 0.2s ease-in-out;
 }
 
 .fade-enter-from,
