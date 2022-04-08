@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "author": "zernonia",
+  "description": "Connect and play with Free & Open Source Supabase REST API / Graphql easily.",
   "scripts": {
     "dev": "vite",
     "copy": "shx mkdir -p public/shiki && shx cp -r node_modules/shiki/{dist,samples,languages,themes} public/shiki/",
