@@ -2,7 +2,7 @@
 import bannerSteam from "@/assets/images/steam_banner.jpeg"
 import CodeInit from "@/components/CodeInit.vue"
 const dictionary = [
-  { name: "id", type: "string", value: "915810" },
+  { name: "id", type: "number", value: "915810" },
   {
     name: "link",
     type: "string",
