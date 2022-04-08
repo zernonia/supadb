@@ -23,13 +23,15 @@ const props = defineProps({
 
     <section class="mt-6">
       <CodeInit :title="title"></CodeInit>
-      <div class="flex items-center justify-center">
-        <div class="w-1/2 text-center leading-12 items-center justify-center h-full text-4xl font-semibold opacity-50">
+      <div class="flex flex-col md:flex-row items-center justify-center">
+        <div
+          class="md:w-1/2 items-center justify-center h-full text-2xl md:text-4xl md:text-center md:leading-12 font-semibold opacity-50"
+        >
           Or...
-          <br />
+          <br class="hidden md:block" />
           with Graphql
         </div>
-        <CodeGraphql class="min-w-96 w-1/2 ml-6" :title="title"></CodeGraphql>
+        <CodeGraphql class="md:min-w-96 w-full md:w-1/2 md:ml-6" :title="title"></CodeGraphql>
       </div>
 
       <div class="mt-6">
