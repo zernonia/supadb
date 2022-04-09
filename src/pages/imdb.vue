@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import bannerImdb from "@/assets/images/imdb_banner.jpeg"
-
 const dictionary = [
   { name: "id", type: "string", value: "tt0050051" },
   {
@@ -26,7 +24,7 @@ const dictionary = [
 </script>
 
 <template>
-  <BasePage :dictionary="dictionary" title="imdb" :banner="bannerImdb">
+  <BasePage :dictionary="dictionary" title="imdb" banner="imdb_banner.jpeg">
     <template #description>
       IMDb is so popular for begineer tutorial, how can I not turn it into <strong>Supabase Database</strong>?
     </template>

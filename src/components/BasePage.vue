@@ -1,21 +1,25 @@
 <script setup lang="ts">
 import CodeInit from "@/components/CodeInit.vue"
+import { ref } from "vue"
 import CodeGraphql from "./CodeGraphql.vue"
+import LazyImage from "./LazyImage.vue"
 
 const props = defineProps({
   dictionary: Object,
   banner: String,
   title: String,
 })
+
+const isLoading = ref(true)
 </script>
 
 <template>
   <div class="md:pr-6">
-    <img
-      class="min-h-48 object-cover w-full rounded-2xl md:rounded-3xl lg:rounded-4xl"
-      :src="banner"
+    <LazyImage
+      class="min-h-48 md:h-76 object-cover w-full rounded-2xl md:rounded-3xl lg:rounded-4xl"
       alt="Steam banner"
-    />
+      :src="banner"
+    ></LazyImage>
 
     <p class="mt-4 text-xl md:text-2xl font-medium">
       <slot name="description"></slot>

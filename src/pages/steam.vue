@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import bannerSteam from "@/assets/images/steam_banner.jpeg"
-import BasePage from "@/components/BasePage.vue"
-
 const dictionary = [
   { name: "id", type: "number", value: "915810" },
   {
@@ -23,7 +20,7 @@ const dictionary = [
 </script>
 
 <template>
-  <BasePage :dictionary="dictionary" title="steam" :banner="bannerSteam">
+  <BasePage :dictionary="dictionary" title="steam" banner="steam_banner.jpeg">
     <template #description>
       STEAM is included into <strong>Supabase Database</strong> because I can't find any STEAM marketplace API.
     </template>
