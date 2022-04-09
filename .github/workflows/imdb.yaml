@@ -6,8 +6,15 @@ jobs:
   cron:
     runs-on: ubuntu-latest
     steps:
-      - name: Call our API route
+      - name: Mystery 1-50
         run: |
           curl --request GET \
           --url 'https://www.supadb.dev/api/imdb?genre=mystery&start=1' \
           --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 10
+      - name: Mystery 51-100
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/imdb?genre=mystery&start=51' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 10
