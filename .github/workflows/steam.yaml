@@ -1,0 +1,109 @@
+name: steam-weekly
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 0 * * 0"
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      # Action genre
+      - name: Action 1-15
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Action&page=0' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Action 16-30
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Action&page=1' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Action 31-45
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Action&page=2' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Action 46-60
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Action&page=3' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      # Adventure genre
+      - name: Adventure 1-15
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Adventure&page=0' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Adventure 16-30
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Adventure&page=1' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Adventure 31-45
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Adventure&page=2' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Adventure 46-60
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Adventure&page=3' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      # Indie genre
+      - name: Indie 1-15
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Indie&page=0' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Indie 16-30
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Indie&page=1' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Indie 31-45
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Indie&page=2' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Indie 46-60
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Indie&page=3' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      # Casual genre
+      - name: Casual 1-15
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Casual&page=0' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Casual 16-30
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Casual&page=1' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Casual 31-45
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Casual&page=2' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
+      - name: Casual 46-60
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/steam?genre=Casual&page=3' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 5
