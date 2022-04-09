@@ -1,21 +1,73 @@
-name: daily-cron-12am
+name: imdb-weekly
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * 0"
 jobs:
   cron:
     runs-on: ubuntu-latest
     steps:
+      # Mystery genre
       - name: Mystery 1-50
         run: |
           curl --request GET \
-          --url 'https://www.supadb.dev/api/imdb?genre=mystery&start=1' \
+          --url 'https://www.supadb.dev/api/imdb?genre=Mystery&start=1' \
           --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
       - run: sleep 10
       - name: Mystery 51-100
         run: |
           curl --request GET \
-          --url 'https://www.supadb.dev/api/imdb?genre=mystery&start=51' \
+          --url 'https://www.supadb.dev/api/imdb?genre=Mystery&start=51' \
           --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
       - run: sleep 10
+      # Comedy genre
+      - name: Comedy 1-50
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/imdb?genre=Comedy&start=1' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 10
+      - name: Comedy 51-100
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/imdb?genre=Comedy&start=51' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 10
+      # Fantasy genre
+      - name: Fantasy 1-50
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/imdb?genre=Fantasy&start=1' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 10
+      - name: Fantasy 51-100
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/imdb?genre=Fantasy&start=51' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 10
+      # Action genre
+      - name: Action 1-50
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/imdb?genre=Action&start=1' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 10
+      - name: Action 51-100
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/imdb?genre=Action&start=51' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 10
+      # Sci-fi genre
+      - name: Sci-fi 1-50
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/imdb?genre=sci-fi&start=1' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+      - run: sleep 10
+      - name: sci-fi 51-100
+        run: |
+          curl --request GET \
+          --url 'https://www.supadb.dev/api/imdb?genre=sci-fi&start=51' \
+          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
