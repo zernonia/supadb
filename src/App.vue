@@ -31,12 +31,14 @@ supabase.auth.onAuthStateChange((event, session) => {
           <router-link
             to="/"
             class="hidden md:flex items-center justify-center p-3 bg-transparent hover:bg-dark-200 rounded-xl transition"
+            :class="{ 'bg-dark-200': $route.name == 'index' }"
           >
             <i-heroicons-outline:home></i-heroicons-outline:home>
           </router-link>
           <router-link
             :to="store.user ? '/settings' : '/login'"
             class="flex items-center justify-center p-3 bg-transparent hover:bg-dark-200 rounded-xl transition"
+            :class="{ 'bg-dark-200': $route.name == 'settings' || $route.name == 'login' }"
           >
             <i-heroicons-outline:user-circle></i-heroicons-outline:user-circle>
           </router-link>
@@ -48,12 +50,14 @@ supabase.auth.onAuthStateChange((event, session) => {
           <router-link
             to="/imdb"
             class="flex items-center justify-center p-3 bg-transparent hover:bg-dark-200 rounded-xl transition"
+            :class="{ 'bg-dark-200': $route.name == 'imdb' }"
           >
             <i-simple-icons:imdb></i-simple-icons:imdb>
           </router-link>
           <router-link
             to="/steam"
             class="flex items-center justify-center p-3 bg-transparent hover:bg-dark-200 rounded-xl transition"
+            :class="{ 'bg-dark-200': $route.name == 'steam' }"
           >
             <i-simple-icons:steam></i-simple-icons:steam>
           </router-link>
