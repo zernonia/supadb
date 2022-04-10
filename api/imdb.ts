@@ -1,16 +1,12 @@
 import { supabase } from "./_lib/supabase"
 import { initPage } from "./_lib/chromium"
 import type { VercelRequest, VercelResponse } from "@vercel/node"
+import verify from "./_lib/verify"
 
 export default async (req: VercelRequest, res: VercelResponse) => {
+  verify(req, res)
   var hrstart = process.hrtime()
   const { query } = req
-  const { authorization } = req.headers
-
-  if (authorization !== `Bearer ${process.env.API_SECRET_KEY}`) {
-    res.status(401).end("Unauthorized")
-    return
-  }
 
   if (!query.genre || !query.start) {
     res.status(400).end("No genre or start position found")
