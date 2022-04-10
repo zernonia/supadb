@@ -28,7 +28,8 @@ export default async (req: VercelRequest, res: VercelResponse) => {
         return item.map((el) => {
           let link = el.getAttribute("href")
           let id = Number(link?.match(/app\/(.*?)\//i)?.[1])
-          let image = el.querySelector(".tab_item_cap_img")?.getAttribute("src") ?? null
+          let image =
+            el.querySelector(".tab_item_cap_img")?.getAttribute("src")?.replace("capsule_184x69", "header") ?? null
           let title = (el.querySelector(".tab_item_name") as HTMLElement)?.innerText ?? null
           let price =
             +(el.querySelector(".discount_final_price") as HTMLElement)?.innerText?.replace(/[^\d.-]/g, "") ?? null

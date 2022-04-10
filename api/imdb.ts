@@ -24,9 +24,10 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       return item.map((el) => {
         let link = "https://www.imdb.com" + el.querySelector(".lister-item-image a")?.getAttribute("href")
         let id = link.match(/title\/(.*?)\//i)?.[1]
-        let image =
+        let image = (
           el.querySelector(".lister-item-image img")?.getAttribute("loadlate") ??
           el.querySelector(".lister-item-image img")?.getAttribute("src")
+        )?.replace(/._(.*?)_.jpg/g, ".jpg")
         let title = (el.querySelector(".lister-item-header a") as HTMLElement)?.innerText ?? null
         let year =
           (el.querySelector(".lister-item-header .lister-item-year") as HTMLElement)?.innerText.replace(
@@ -45,9 +46,23 @@ export default async (req: VercelRequest, res: VercelResponse) => {
           ? +(el.querySelector(".sort-num_votes-visible span:nth-child(2)") as HTMLElement)?.innerText.replace(/,/g, "")
           : null
 
-        return { id, image, link, title, year, certificate, duration, genre, rating, metascore, description, vote }
+        return {
+          id,
+          image,
+          link,
+          title,
+          year,
+          certificate,
+          duration,
+          genre,
+          rating,
+          metascore,
+          description,
+          vote,
+        }
       })
     })
+
     const result = await supabase.from("imdb").upsert(data)
     if (result.error) throw new Error(result.error.message)
 
