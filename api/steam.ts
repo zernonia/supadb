@@ -48,7 +48,6 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
     await page.waitForSelector("#NewReleasesTable")
     await page.waitForNetworkIdle()
-    await page.waitForTimeout(500)
 
     let data1 = await scrapData(page, query)
 
