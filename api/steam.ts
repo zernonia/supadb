@@ -50,7 +50,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     await page.waitForNetworkIdle()
     await page.waitForTimeout(500)
 
-    let data = await scrapData(page, query)
+    let data1 = await scrapData(page, query)
 
     await Promise.all([page.click("#NewReleases_btn_next"), page.waitForNavigation()])
     let data2 = await scrapData(page, query)
@@ -58,7 +58,9 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     await Promise.all([page.click("#NewReleases_btn_next"), page.waitForNavigation()])
     let data3 = await scrapData(page, query)
 
-    const result = await supabase.from("steam").upsert([...data, ...data2, ...data3])
+    const data = [...new Map([...data1, ...data2, ...data3].map((v) => [v.id, v])).values()]
+
+    const result = await supabase.from("steam").upsert(data)
     if (result.error) throw new Error(result.error.message)
 
     var hrend = process.hrtime(hrstart)
