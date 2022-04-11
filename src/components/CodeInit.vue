@@ -28,7 +28,7 @@ const { data, error } = await supabase.from("${props.title}").select("*")
       )
     } else if (n == "fetch") {
       code.value = highlighter.codeToHtml(
-        `fetch('https://gqkuommdmfzmwkzdewma.supabase.co/rest/v1/${props.title}?select=*', {
+        `fetch('${import.meta.env.VITE_SUPABASE_URL}/rest/v1/${props.title}?select=*', {
   headers: {
     apikey: ...,      // Login to get receive credential
     Authorization: 'Bearer ...'
