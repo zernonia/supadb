@@ -16,6 +16,7 @@ declare module 'vue' {
     'ISimpleIcons:steam': typeof import('~icons/simple-icons/steam')['default']
     LazyImage: typeof import('./src/components/LazyImage.vue')['default']
     ProductPage: typeof import('./src/components/ProductPage.vue')['default']
+    Tabs: typeof import('./src/components/Tabs.vue')['default']
   }
 }
 
