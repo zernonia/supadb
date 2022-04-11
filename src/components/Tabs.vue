@@ -24,7 +24,7 @@ const emit = defineEmits<{
       class="link border-b-3 border-transparent !rounded-b-none text-true-gray-400"
       :class="{ 'border-yellow-300 !text-light-900  ': modelValue == tab.value }"
     >
-      Supabase Client
+      {{ tab.name }}
     </button>
   </div>
 </template>

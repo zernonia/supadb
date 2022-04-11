@@ -26,23 +26,40 @@ const getAnonKey = () => {
 
 getAnonKey()
 
-let code = computed(
-  () => `const supabase = createClient("${config.value.url}", 
+const code = ref("")
+const tab = ref("supabase_client")
+const tabs = [
+  { name: "Supabase Client", value: "supabase_client" },
+  { name: "Fetch", value: "fetch" },
+]
+
+const applyShiki = () => {
+  if (tab.value == "supabase_client") {
+    code.value = highlighter.codeToHtml(
+      `const supabase = createClient("${config.value.url}", 
   "${config.value.anon}", {
   headers: {
     Authorization: "Bearer ${config.value.auth}"
   }
-})`
-)
-let printedCode = ref("")
-
-const applyShiki = () => {
-  printedCode.value = highlighter.codeToHtml(code.value, "ts")
+})`,
+      "ts"
+    )
+  } else if (tab.value == "fetch") {
+    code.value = highlighter.codeToHtml(
+      `fetch("${config.value.url}/rest/v1/<table>?select=*", {
+  headers: {
+    apikey: "${config.value.anon}"
+    Authorization: "Bearer ${config.value.auth}"
+  }
+})`,
+      "ts"
+    )
+  }
 }
-applyShiki()
-watch(code, () => applyShiki())
 
-const { copy, copied } = useClipboard({ source: printedCode.value })
+watch([tab, config], () => applyShiki(), { immediate: true, deep: true })
+
+const { copy, copied } = useClipboard({ source: code.value })
 </script>
 
 <template>
@@ -68,6 +85,8 @@ const { copy, copied } = useClipboard({ source: printedCode.value })
         <i-heroicons-outline:clipboard-copy class="inline h-full w-full"></i-heroicons-outline:clipboard-copy>
       </button>
     </div>
-    <div class="truncate" v-html="printedCode" :class="{ 'animate-head-shake': copied }"></div>
+
+    <Tabs v-model="tab" :tabs="tabs"></Tabs>
+    <div class="truncate" v-html="code" :class="{ 'animate-head-shake': copied }"></div>
   </div>
 </template>
