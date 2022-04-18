@@ -71,7 +71,7 @@ supabase.auth.onAuthStateChange((event, session) => {
         </div>
       </div>
       <div class="flex flex-col md:flex-row md:items-center mt-auto pt-12 pb-3">
-        <router-link class="small-link" to="/terms-and-conditions"> Terms & Condition </router-link>
+        <router-link class="small-link" to="/terms-and-conditions"> Terms & Conditions </router-link>
         <span class="hidden md:block">|</span>
 
         <p class="flex items-center w-max px-4 font-semibold">
