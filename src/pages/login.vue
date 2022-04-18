@@ -12,7 +12,7 @@ const login = () => {
   <div class="mt-12 flex flex-col items-center">
     <h2 class="text-yellow-300 text-4xl text-center font-semibold">
       Login with <br class="block md:hidden" />
-      Github
+      GitHub
     </h2>
     <button
       class="mt-6 flex items-center text-lg text-dark-700 bg-light-900 transition hover:bg-light-400 font-semibold px-6 py-3 rounded-xl"
