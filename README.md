@@ -88,7 +88,7 @@ $$ language sql stable;
 Yarn
 
 - ```sh
-  npm install --global yarn
+  npm install --global yarn vercel
   ```
 
 ### Development
@@ -99,11 +99,12 @@ Yarn
    ```
 2. Install NPM packages
    ```sh
+   cd supadb
    yarn install
    ```
-3. Run Development instance
+3. Run local Vercel development instance
    ```sh
-   yarn dev
+   vercel dev
    ```
 
 ## ➕ Contributing
